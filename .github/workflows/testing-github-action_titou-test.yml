@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_4a273b0dcc6542f3b76b17601fc20c59 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_68a40a66334f4049b645217381bdf9f8 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_749a586a01be4b46a714fdf0c4ac1633 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_e2c7b40fd44a48398148922ed6c301cd }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4a273b0dcc6542f3b76b17601fc20c59 }}/twisti/test:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_749a586a01be4b46a714fdf0c4ac1633 }}/twisti/test:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'titou-test'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_504416144e1646c7adff4aa8ac652b2c }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_4a273b0dcc6542f3b76b17601fc20c59 }}/twisti/test:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9acc6988374a40799b15306eacb0b22e }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_749a586a01be4b46a714fdf0c4ac1633 }}/twisti/test:${{ github.sha }}'
