@@ -37,13 +37,13 @@ jobs:
         registry: https://index.docker.io/v1/
         username: ${{ secrets.AzureAppService_ContainerUsername_749a586a01be4b46a714fdf0c4ac1633 }}
         password: ${{ secrets.AzureAppService_ContainerPassword_e2c7b40fd44a48398148922ed6c301cd }}
-
-    - name: Build and push container image to registry
-      uses: docker/build-push-action@v3
-      with:
-        push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_749a586a01be4b46a714fdf0c4ac1633 }}/twisti/test:${{ github.sha }}
-        file: ./Dockerfile
+    
+#    - name: Build and push container image to registry
+#      uses: docker/build-push-action@v3
+ #     with:
+ #       push: true
+  #      tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_749a586a01be4b46a714fdf0c4ac1633 }}/twisti/test:${{ github.sha }}
+   #     file: ./Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
