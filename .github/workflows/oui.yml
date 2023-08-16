@@ -25,3 +25,4 @@ jobs:
           context: .
           push: true
           tags: twisti/app:latest, twisti/app:${{ github.run_number}}
+          file: ./Dockerfile
