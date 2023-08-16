@@ -43,7 +43,7 @@ jobs:
       with:
        push: true
        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_749a586a01be4b46a714fdf0c4ac1633 }}/twisti/test:${{ github.sha }}
-       file: ./Dockerfile
+
 
   deploy:
     runs-on: ubuntu-latest
