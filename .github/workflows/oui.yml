@@ -3,7 +3,8 @@ name: ci
 on:
   push:
     branches:
-      - 'main'
+      - testing-github-action
+  workflow_dispatch:
 
 jobs:
   docker:
