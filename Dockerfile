@@ -1,2 +1,2 @@
 FROM socialengine/nginx-spa:latest
-COPY dist/spa /app
+COPY ./dist/spa /app
