@@ -16,10 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - run: echo "🍏 NodeVersion is ${{ env.NODE_VERSION }}."
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+
           cache: 'npm'
 
       - name: npm install, build, and test
