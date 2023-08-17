@@ -58,4 +58,4 @@ jobs:
           app-name: 'titou-test'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_9acc6988374a40799b15306eacb0b22e }}
-          images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_749a586a01be4b46a714fdf0c4ac1633 }}/twisti/app:${{ github.sha }}'
+          images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_749a586a01be4b46a714fdf0c4ac1633 }}/twisti/app:latest'
