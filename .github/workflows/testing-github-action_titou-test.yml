@@ -16,12 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: echo "🍏 NodeVersion is ${{ env.NODE_VERSION }}."
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-
           cache: 'npm'
 
       - name: npm install, build, and test
@@ -38,14 +36,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Build and push container image to registry
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
+          context: .
           push: true
           tags: twisti/app:latest, twisti/app:${{ github.run_number}}
 
