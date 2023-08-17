@@ -1,7 +1,3 @@
-FROM steebchen/nginx-spa:stable
+FROM socialengine/nginx-spa:latest
+COPY ./dist/spa /app
 RUN ls -la
-COPY dist/ /app
-
-EXPOSE 80
-
-CMD ["nginx"]
