@@ -1,5 +1,8 @@
 <template>
   <q-page class="row items-center justify-evenly">
+
+    <q-img src="titou.png"/>
+
     <example-component
       title="Example component"
       active
